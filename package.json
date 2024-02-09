@@ -1,0 +1,14 @@
+{
+  "name": "tema5",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000m\u0000y\u0000S\u0000Q\u0000L\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.9.1"
+  }
+}
