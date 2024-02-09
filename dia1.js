@@ -12,7 +12,7 @@ async function main(){
         console.log("Conexión correcta");
 
         // añadimos una columna
-        // let añadirColumna = "ALTER TABLE direccion ADD ciudad VARCHAR(40)"; 
+        // let añadirColumna = "ALTER TABLE direccion ADD        ciudad VARCHAR(40)"; 
         // let [result] = await connection.query(añadirColumna);
         // console.log("Columna añadida");
         // console.log(result);
