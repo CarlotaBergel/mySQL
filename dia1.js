@@ -111,11 +111,41 @@ async function main(){
         // console.log(result);
 
         // Media aritmetica
-        let mediaArimetica = "SELECT student_id, AVG (mark) AS media FROM marks WHERE date > '2023-01-31'GROUP BY student_id "; 
-        let [result] = await connection.query(mediaArimetica);
-        console.log("Media aritmetica");
+        // let mediaArimetica = "SELECT student_id, AVG (mark) AS media FROM marks WHERE date > '2023-01-31'GROUP BY student_id "; 
+        // let [result] = await connection.query(mediaArimetica);
+        // console.log("Media aritmetica");
+        // console.log(result);
+
+        // DIA3
+
+        // nombre apellidos de los alumnos y nombres de asignaturas apuntados
+        let datos = "SELECT students.first_name, students.last_name, subjects.title FROM students"+"INNER JOIN marks ON students.student_id = marks.student_id" + "INNER JOIN subjects ON marks.subject_id = subjects.subject_id"; 
+        let [result] = await connection.query(datos);
+        console.log("Nombre y apellidos de alumnos y sus asignaturas");
         console.log(result);
 
+
+
+
+
+
+
+
+
+
+        
+        // Nombres y apellios profesores y asignaturas que dan
+        // let datos = "SELECT teachers.first_name, teachers.last_name, subjects.title"+"FROM teachers INNER JOIN subject_teacher" +"ON teachers.teacher_id = subject_teacher.teacher_id"+"INNER JOIN subjects ON subject_teacher.subject_id = subjects.subject_id"; 
+        // let [result] = await connection.query(datos);
+        // console.log("Nombre y apellidos de profesores y sus asignaturas");
+        // console.log(result);
+
+
+        // num ttal de alumnos por asignatura, nombre asignatura, y nombre apellidos profesor
+        // let datos = "SELECT  subjects.title, teachers.first_name, teachers.second_name, COUNT(*) AS students FROM teachers " +"INNER JOIN subject_teacher ON teachers.teacher_id = subject_teacher.teacher_id " +"INNER JOIN subjects ON subject_teacher.subject_id = subjects.subject_id " +"INNER JOIN marks ON subjects.subject_id = marks.subject_id " +"INNER JOIN students ON marks.student_id = students.student_id "+"GROUP BY subjects.title, teachers.first_name, teachers.second_name"; 
+        // let [result] = await connection.query(datos);
+        // console.log("datos recogidos");
+        // console.log(result);
 
     }
     catch(err){
@@ -125,4 +155,3 @@ async function main(){
 }
 
 main();
-
